@@ -20,7 +20,7 @@
 ### Association
 belongs_to :group
 belongs_to :user
-has_many :groups_users,through: : users
+
 
 ## groupテーブル
 |Column|Type|Options|
