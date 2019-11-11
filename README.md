@@ -17,17 +17,14 @@
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :group
-- belongs_to :user
-- has_many :groups_users,through: : users
+
 
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- has_many :comments,through: 
+- has_many :group,through: user
 
 ## commentsテーブル
 |Column|Type|Options|
