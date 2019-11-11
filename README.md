@@ -1,4 +1,4 @@
-# caat-space DB設計
+# cat-space DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -10,7 +10,18 @@
 - has_many :posts
 - has_many :comments
 
-## postsテーブル
+
+## groups_usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :group
+- belongs_to :user
+
+
+## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|text||
@@ -22,23 +33,6 @@
 - has_many :comments
 - has_many :posts_tags
 - has_many  :tags,  through:  :posts_tags
-
-## tagsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
-### Association
-- has_many :posts_tags
-- has_many  :posts,  through:  :posts_tags
-
-## posts_tagsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|post_id|integer|null: false, foreign_key: true|
-|tag_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :post
-- belongs_to :tag
 
 
 
