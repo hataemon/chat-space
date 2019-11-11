@@ -2,10 +2,9 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|usersname|string|null: false|
+|name|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
-|nickname|string|null: false|
 ### Association
 - has_many :groups_users
 - has_many :comments
