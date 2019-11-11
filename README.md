@@ -7,7 +7,7 @@
 |password|string|null: false|
 |nickname|string|null: false|
 ### Association
-- has_many :posts
+- has_many :groups_users
 - has_many :comments
 
 
@@ -18,7 +18,7 @@
 |group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :group
-- belongs_to :user
+- belongs_to :users
 
 
 ## groupテーブル
@@ -29,12 +29,10 @@
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :user
+- belongs_to :users
 - has_many :comments
-- has_many :posts_tags
+- has_many :groups_users
 - has_many  :tags,  through:  :posts_tags
-
-
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -43,5 +41,6 @@
 |user_id|integer|null: false, foreign_key: true|
 |tweet_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :tweet
-- belongs_to :user
+- belongs_to :groups_users
+- belongs_to :users
+
