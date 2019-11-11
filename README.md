@@ -20,14 +20,14 @@
 ### Association
 - belongs_to :group
 - belongs_to :user
-
+- has_many :groups_users,through: : users
 
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- has_many :comments,through: : groups_users
+- has_many :comments,through: 
 
 ## commentsテーブル
 |Column|Type|Options|
