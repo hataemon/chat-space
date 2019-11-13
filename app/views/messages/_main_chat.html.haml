@@ -1,8 +1,8 @@
 .chat-main
   .main-header
     .main-header__box
-      <%= link_to p.side-header__box__user-name honbantaro%>
-      <%= link_to ul.side-header__box__menu%>
-        <%= link_to li.side-header__box__menu__new-group%>
-          <%= link_to a{:href = # > "/groups/new"}%>
-            <%= link_to i.fa.fa-edit%>
+      %p.side-header__box__user-name honbantaro
+      %ul.side-header__box__menu
+        %li.side-header__box__menu__new-group
+        = link_to "/groups/new" do
+          %i.fa.fa-edit
