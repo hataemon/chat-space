@@ -1,4 +1,53 @@
-@import "./reset";
 @import "font-awesome-sprockets";
 @import "./font-awesome";
+@import "./reset";
 @import "main_chat";
+@import "side_bar";
+
+
+
+// @import "config/colors";
+// @import "config/font-size";
+// @import "mixins/vendor_prefix";
+// @import "modules/side_bar";
+// @import "modules/chat";
+// @import "messages/messages.scss";
+
+
+
+// .html, body {
+//   height: 100%;
+//   margin: 0;
+//   padding: 0;
+// }
+
+// .header-side {
+//   height: 40px;
+//   background-color: #253141;
+//   width:300px
+//   }
+
+//  .header-group-side {
+//    height: 100%;
+//    background-color: #2f3e51;
+//    width:300px
+//    }
+ 
+//  .contents-top{
+//    height: 40px;
+//    background-color: #253141;
+//    width:100%
+//  }
+
+
+//  .contents-midle{
+//  height: 100%;
+//  background-color: #fafafa;
+//  width:100%
+//  }
+
+//  .contents-message {
+//  height: 50px;
+//  background-color: #ddd;
+//  width:100%
+//  }

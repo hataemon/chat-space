@@ -1,18 +1,71 @@
-.chat-side
-  .side-header
-    .side-header__box
-      %p.side-header__box__user-name honbantaro
-      %ul.side-header__box__menu
-        %li.side-header__box__menu__new-group
-          %a{:href => "/groups/new"}
-            %i.fa.fa-edit
-        %li.side-header__box__menu__edit-user
-          %a{:href => "/users/2264/edit"}
-            %i.fa.fa-cog
+
+.side-bar
+  .header
+    %h3.header__name Hatae
+    %ul.header__lists
+      %li.list
+        = link_to '#' do
+          = icon('fa', 'edit',class: 'icon')
+      %li.list
+        = link_to '#' do
+          = icon('fa', 'cog',class: 'icon')
+
+
+
   .groups
-    %a{:href => "/groups/4953/messages"}
-      .group
-        %p.group__group-name hataemonclub
-        %p.group__latest-message 納期に間に合わせましょう！
-    
-      
+    .group
+      .group__name div.inc
+      .group__message this is a first message
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-# .chat-side
+-#   .side-header
+-#     .side-header__box
+-#       %p.side-header__box__user-name honbantaro
+-#       %ul.side-header__box__menu
+-#         %li.side-header__box__menu__new-group
+-#           %a{:href => "/groups/new"}
+-#             %i.fa.fa-edit
+-#         %li.side-header__box__menu__edit-user
+-#           %a{:href => "/users/2264/edit"}
+-#             %i.fa.fa-cog
+-#   .groups
+-#     %a{:href => "/groups/4953/messages"}
+-#       .group
+-#         %p.group__group-name hataemonclub
+-#         %p.group__latest-message 納期に間に合わせましょう！
+

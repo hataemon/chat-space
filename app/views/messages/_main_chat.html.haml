@@ -1,8 +1,42 @@
 .chat-main
   .main-header
-    .main-header__box
-      %p.side-header__box__user-name honbantaro
-      %ul.side-header__box__menu
-        %li.side-header__box__menu__new-group
-        = link_to "/groups/new" do
-          %i.fa.fa-edit
+    .main-header__left-box
+      %h2.main-header__left-box__current-group
+        TEST
+      %ul.main-header__left-box__member-list
+        Member:hatae
+    .main-header__right-box
+      .main-header__right-box__button
+        Edit
+
+
+  .messages
+    .message
+      .message__upper-info
+        %p.message__upper-info__talker
+        messagetest hatae
+        %ul.message__upper-info__date
+        2019/11/16
+        %li.message__text
+        本日は晴天なり
+
+  .form
+    %form
+      %input.form__message
+      .form__mask
+        %label.form__mask__image
+          = icon('fa','image',class: 'icon')
+          %input.hidden{type: 'file'}
+      %input.form__submit{type: 'submit', value: 'Send'}
+       
+       
+
+    -# .send
+      
+  
+  -#    %input placeholder="type a message"   
+ 
+  -#  <label class="input-box__image" for="message_image">
+  
+
+  
