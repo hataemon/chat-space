@@ -1,15 +1,15 @@
 
 .side-bar
   .header
-    %h3.header__name Hatae
-    %ul.header__lists
-      %li.list
-        = link_to '#' do
-          = icon('fa', 'edit',class: 'icon')
-      %li.list
-        = link_to '#' do
-          = icon('fa', 'cog',class: 'icon')
-
+    %h3.header__name 
+      = current_user.name
+      %ul.header__lists
+        %li.list
+          = link_to '#' do
+            = icon('fa', 'edit',class: 'icon')
+        %li.list
+          = link_to '#' do
+            = icon('fa', 'cog',class: 'icon')
 
 
   .groups
