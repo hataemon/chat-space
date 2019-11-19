@@ -7,10 +7,12 @@
         Member:hatae
     .main-header__right-box
       .main-header__right-box__button
-        Edit
+        = link_to "Edit", edit_group_path(@group.id)
+        //.main-header__edit-btn Edit
 
 
   .messages
+    = render @messages
     .message
       .message__upper-info
         %p.message__upper-info__talker
@@ -21,11 +23,22 @@
         本日は晴天なり
 
   .form
-    %form
-      %input.form__message
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
       .form__mask
-        %label.form__mask__image
-          = icon('fa','image',class: 'icon')
-          %input.hidden{type: 'file'}
-      %input.form__submit{type: 'submit', value: 'Send'}
-       
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
+
+  -# .form
+  -#   %form
+  -#     %input.form__message
+  -#     .form__mask
+  -#       %label.form__mask__image
+  -#         = icon('fa','image',class: 'icon')
+  -#         %input.hidden{type: 'file'}
+  -#     %input.form__submit{type: 'submit', value: 'Send'}
+      
+
+

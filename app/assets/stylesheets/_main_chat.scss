@@ -5,11 +5,15 @@
 
 .chat-main{
   width: calc(100vw - 300px);
+  float: left;
   height: 100%;
   margin: 0;
   padding: 0;
   background-color: #fafafa;
   color: #333333;
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
 }
 
 
@@ -69,9 +73,9 @@
   background-color: #FAFAFA;
   box-sizing: border-box;
   padding: 46px 40px 0;
-  height: calc(100% - 100px - 90px);
   width : 100%;
   height: calc(100vh - 190px);
+  overflow: scroll;
 }
 
 .message{
