@@ -13,14 +13,18 @@
 
   .messages
     = render @messages
-    .message
-      .message__upper-info
-        %p.message__upper-info__talker
-        messagetest hatae
-        %ul.message__upper-info__date
-        2019/11/16
-        %li.message__text
-        本日は晴天なり
+
+    -# .message
+    -#   .message__upper-info
+    -#     %p.message__upper-info__talker
+    -#     messagetest hatae
+    -#     %ul.message__upper-info__date
+    -#     2019/11/16
+    -#     %li.message__text
+    -#     本日は晴天なり
+
+      
+        
 
   .form
     = form_for [@group, @message] do |f|
