@@ -10,7 +10,6 @@ function buildPost(message){
 
   $('.new_message').on('submit', function(e){
     e.preventDefault(e);
-    // console.log("イベント発火")
     var formData = new FormData(this);
     var url = $(this).attr('action');
     $.ajax({
@@ -34,12 +33,3 @@ function buildPost(message){
     })
   })
 })
-
-
-
-
-// .done(function(message){
-//   var html = buildPost(message);
-//   $('.contents').append(html)
-//   $('#message_text').val('')
-//  })
