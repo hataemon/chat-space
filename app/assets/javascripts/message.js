@@ -10,25 +10,27 @@ function buildPost(message){
 
   $('.new_message').on('submit', function(e){
     e.preventDefault(e);
-    console.log("イベント発火")
+    // console.log("イベント発火")
     var formData = new FormData(this);
     var url = $(this).attr('action');
     $.ajax({
-      url: url,  //同期通信でいう『パス』
-      type: 'POST',  //同期通信でいう『HTTPメソッド』
+      url: url,  
+      type: 'POST', 
       data: formData,
       dataType: 'json',
       processData: false,
       contentType: false
     })
-    .done(function(message){
-     var html = buildPost(message);
-     $('.contents').append(html)
-     $('#message?text').val('')
-    })
+
+    function resetForm(message){
+      document.getElementById('.contents').submit();
+    }
+    function resetForm(message){
+     document.getElementById('#message_text').submit();
+    }
+
     .fail(function(){
       alert("メッセージ送信に失敗しました");
-
     })
   })
 })
@@ -36,12 +38,8 @@ function buildPost(message){
 
 
 
-
-
-
-// $(function(){
-//   $(*****).on(*****, function(){
-//     e.preventDefault()
-//     console.log(2020)　// console.logを用いてイベント発火しているか確認
-//   })
-// })
+// .done(function(message){
+//   var html = buildPost(message);
+//   $('.contents').append(html)
+//   $('#message_text').val('')
+//  })
