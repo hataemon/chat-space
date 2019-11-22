@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+  def index
+    return nil if params[:keyword] == ""
+    @users = User.where(['name LIKE ?', "%#{params[:keyword]}%"] ).where.not(id: current_user.id).limit(10)
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
 
   def edit
   end
@@ -7,9 +15,15 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
       redirect_to root_path
     else
-      render :edit
-    end
-  end
+
+  def index
+     respond_to do |format|
+      binding.pry
+          format.html
+          format.json
+      end
+  end render :edit
+end
 
   private
 
