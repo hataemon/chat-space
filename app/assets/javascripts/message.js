@@ -28,15 +28,16 @@ $(function(){
       `</div>`
   }
 
-  var buildMessageHTML = function(message) {
-    html = (true)? 1 : 0 ;
-    if (message.content && message.image.url) {
-      //data-idが反映されるようにしている
-      var html = buildMessgeInContentAndImage(message)
-    } else if (message.content) {
-      //同様に、data-idが反映されるようにしている
+  var buildMessgeInContentAndImage = function(message) {
+    return `${
+      (message.content)? (
+        `<p class="lower-message__content">` +
+          message.content +
+        `</p>`
+      ) : ''
+    }` 
       var html = `<div class="message" data-id=` + message.id + `>` +
-        `<div class="upper-message">` +
+      `<div class="upper-message">` +
           `<div class="upper-message__user-name">` +
             message.user_name +
           `</div>` +
@@ -97,7 +98,7 @@ $(function() {
 
     })
     .fail(function() {
-      console.log('error');
+      console.log('alert');
     });
   };
 });

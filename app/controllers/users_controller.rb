@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   def index
      respond_to do |format|
-      binding.pry
+
           format.html
           format.json
       end
