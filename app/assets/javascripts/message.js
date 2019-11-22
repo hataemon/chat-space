@@ -1,35 +1,94 @@
 $(function(){
 
 
-function buildPost(message){
- var html = '<div class = "content">
-              ${message.text}
-              </div>'
- return html;
-}
 
-  $('.new_message').on('submit', function(e){
-    e.preventDefault(e);
-    var formData = new FormData(this);
-    var url = $(this).attr('action');
+  var buildMessgeInContentAndImage = function(message) {
+    return '${
+      (message.content)? (
+        '<p class="lower-message__content">'
+          message.content 
+        '</p>'
+      ) : ''
+    }' 
+     '<div class="message" data-id='  message.id  '>'' 
+        '<div class="upper-message">' 
+          '<div class="upper-message__user-name">' 
+            message.user_name 
+          '</div>'
+          '<div class="upper-message__date">' 
+            message.created_at 
+          '</div>' 
+        '</div>` 
+        '<div class="lower-message">' 
+          (message.content)? ('<p class="lower-message__content">'
+            message.content 
+          `</p>`) : '' 
+          ('<img src="' + message.image.url  ''" class="lower-message__image" >') 
+        '</div>'
+      '</div>''
+  }
+
+  var buildMessgeInContentAndImage = function(message) {
+    return '${
+      (message.content)? (
+        '<p class="lower-message__content">' 
+          message.content 
+        '</p>'
+      ) : ''
+    }'
+      var html = '<div class="message" data-id='  message.id  '>'
+            '<div class="upper-message">'
+          '<div class="upper-message__user-name">'
+            message.user_name 
+          '</div>'
+          '<div class="upper-message__date">'
+            message.created_at 
+          '</div>'
+        '</div>'
+        '<div class="lower-message">'
+          '<p class="lower-message__content">'
+            message.content
+          '</p>'
+        '</div>'
+      '</div>'
+    } else if (message.image.url) {
+  
+      var html = '<div class="message" data-id=' message.id  ''>'
+        '<div class="upper-message">'
+          '<div class="upper-message__user-name">'
+            message.user_name 
+          '</div>'
+          '<div class="upper-message__date">'
+            message.created_at 
+          '</div>'
+        '</div>'
+        '<div class="lower-message">'
+          '<img src="' message.image.url  ''" class="lower-message__image" >'
+        '</div>'
+      '</div>'
+    };
+    return html;
+  };
+
+message.js
+ 
+$(function() {
+
+
+  var reloadMessages = function() {
+    last_message_id = ※※※
     $.ajax({
-      url: url,  
-      type: 'POST', 
-      data: formData,
+      url: ※※※,
+      type: 'get',
       dataType: 'json',
-      processData: false,
-      contentType: false
+      data: {id: last_message_id}
     })
+    .done(function(messages) {
+      var insertHTML = '';
 
-    function resetForm(message){
-      document.getElementById('.contents').submit();
-    }
-    function resetForm(message){
-     document.getElementById('#message_text').submit();
-    }
-
-    .fail(function(){
-      alert("メッセージ送信に失敗しました");
     })
-  })
-})
+    .fail(function() {
+      console.log('alert');
+    });
+  };
+});
