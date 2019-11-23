@@ -14,16 +14,8 @@ class UsersController < ApplicationController
   def update
     if current_user.update(user_params)
       redirect_to root_path
-    else
-
-  def index
-     respond_to do |format|
-
-          format.html
-          format.json
-      end
-     render :edit
-end
+    else render :edit
+  end
 
   private
 
