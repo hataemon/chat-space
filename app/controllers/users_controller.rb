@@ -22,7 +22,7 @@ class UsersController < ApplicationController
           format.html
           format.json
       end
-  end render :edit
+     render :edit
 end
 
   private
