@@ -8,9 +8,9 @@ $(function(){
         '<p class="lower-message__content">'
           message.content 
         '</p>'
-      ) : ''
-    }' 
-     '<div class="message" data-id='  message.id  '>'' 
+      ):
+    }
+     '<div class="message" data-id='message_id'>' 
         '<div class="upper-message">' 
           '<div class="upper-message__user-name">' 
             message.user_name 
@@ -18,14 +18,14 @@ $(function(){
           '<div class="upper-message__date">' 
             message.created_at 
           '</div>' 
-        '</div>` 
+        '</div>'
         '<div class="lower-message">' 
           (message.content)? ('<p class="lower-message__content">'
-            message.content 
+          //  message.content 
           `</p>`) : '' 
-          ('<img src="' + message.image.url  ''" class="lower-message__image" >') 
+          ('<img src=" message.image.url" class="lower-message__image" >') 
         '</div>'
-      '</div>''
+      '</div>'
   }
 
   var buildMessgeInContentAndImage = function(message) {
@@ -34,8 +34,8 @@ $(function(){
         '<p class="lower-message__content">' 
           message.content 
         '</p>'
-      ) : ''
-    }'
+      ) :
+    }
       var html = '<div class="message" data-id='  message.id  '>'
             '<div class="upper-message">'
           '<div class="upper-message__user-name">'
@@ -63,12 +63,12 @@ $(function(){
           '</div>'
         '</div>'
         '<div class="lower-message">'
-          '<img src="' message.image.url  ''" class="lower-message__image" >'
+          '<img src="message.image.url" class="lower-message__image" >'
         '</div>'
       '</div>'
     };
     return html;
-  };
+  }
 
 message.js
  
@@ -76,9 +76,9 @@ $(function() {
 
 
   var reloadMessages = function() {
-    last_message_id = ※※※
+    last_message_id = $(".message").data("message_id")
     $.ajax({
-      url: ※※※,
+      url: app/messages,
       type: 'get',
       dataType: 'json',
       data: {id: last_message_id}
