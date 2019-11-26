@@ -21,14 +21,23 @@
   font-weight: bold;
 }
 
+.header__lists{
+  display:flex;
+}
+
+.icon{
+  color:#FFFFFF;
+}
+
 
 .side-header__box__menu{
   color:#FFFFFF;
- 
+  
 }
 
 .header__name{
 color:#fff;
+display:flex;
 }
 
 .groups {

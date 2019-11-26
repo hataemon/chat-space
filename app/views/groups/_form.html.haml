@@ -11,7 +11,8 @@
     .chat-group-form__field--right
       = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
   .chat-group-form__field.clearfix
-    .chat-group-form__field--left
+
+    .chat-group-form__field--left.clearfix
       %label.chat-group-form__label{:for => "chat_group_チャットメンバーを追加"} チャットメンバーを追加
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
@@ -34,8 +35,25 @@
               .chat-group-user.clearfix.js-chat-menber
           %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
           %p.chat-group-user__name= current_user.name  
-              
+
+           
+
+-# <label class="input-box__image" for="message_image"><i class="fa fa-image"></i>
+-# <input class="input-box__image__file" type="file" name="message[image]" id="message_image">
+-# </label>
+
+
+-#    <label class="input-box__image" for="message_image"><i class="fa fa-image"></i>
+-# <input class="input-box__image__file" type="file" name="message[image]" id="message_image">
+-# </label>
+
+
    
+
+
+
+
+
   -# .chat-group-form__field.clearfix
   -#   .chat-group-form__field--left
   -#   .chat-group-form__field--right
