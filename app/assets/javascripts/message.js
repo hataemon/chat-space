@@ -1,6 +1,14 @@
 $(function(){
 
 
+  // $.ajax({
+  //   url: 取得したリクエストURL,  //同期通信でいう『パス』
+  //   type: 'POST',  //同期通信でいう『HTTPメソッド』
+  //   data: 取得したFomeData,  
+  //   dataType: 'json',
+  //   processData: false,
+  //   contentType: false
+  // })
 
   var buildMessgeInContentAndImage = function(message) {
     return '${
@@ -10,61 +18,61 @@ $(function(){
         '</p>'
       ):
     }
-     '<div class="message" data-id='message_id'>' 
-        '<div class="upper-message">' 
-          '<div class="upper-message__user-name">' 
-            message.user_name 
-          '</div>'
-          '<div class="upper-message__date">' 
+     '<div class="message" data-id=' + message_id'>' +
+        '<div class="upper-message">'  +
+          '<div class="upper-message__user-name">' +
+            message.user_name +
+          '</div>' +
+          '<div class="upper-message__date">' +
             message.created_at 
           '</div>' 
         '</div>'
-        '<div class="lower-message">' 
-          (message.content)? ('<p class="lower-message__content">'
+        '<div class="lower-message">' +
+          (message.content)? ('<p class="lower-message__content">' +
           //  message.content 
-          `</p>`) : '' 
-          ('<img src=" message.image.url" class="lower-message__image" >') 
-        '</div>'
-      '</div>'
+          `</p>`) : '' +
+          ('<img src="  + message.image.url + " class="lower-message__image" >')  +
+        '</div>' +
+      '</div>' +
   }
 
   var buildMessgeInContentAndImage = function(message) {
     return '${
       (message.content)? (
-        '<p class="lower-message__content">' 
-          message.content 
-        '</p>'
+        '<p class="lower-message__content">' +
+          message.content +
+        '</p>' +
       ) :
     }
-      var html = '<div class="message" data-id='  message.id  '>'
-            '<div class="upper-message">'
-          '<div class="upper-message__user-name">'
-            message.user_name 
-          '</div>'
-          '<div class="upper-message__date">'
-            message.created_at 
-          '</div>'
-        '</div>'
-        '<div class="lower-message">'
-          '<p class="lower-message__content">'
-            message.content
-          '</p>'
-        '</div>'
+      var html = '<div class="message" data-id=' +  message.id + '>' +
+            '<div class="upper-message">' +
+          '<div class="upper-message__user-name">' +
+            message.user_name +
+          '</div>' +
+          '<div class="upper-message__date">' +
+            message.created_at + 
+          '</div>' +
+        '</div>' +
+        '<div class="lower-message">' +
+          '<p class="lower-message__content">' +
+            message.content +
+          '</p>' +
+        '</div>' +
       '</div>'
     } else if (message.image.url) {
   
-      var html = '<div class="message" data-id=' message.id  ''>'
-        '<div class="upper-message">'
-          '<div class="upper-message__user-name">'
-            message.user_name 
-          '</div>'
-          '<div class="upper-message__date">'
-            message.created_at 
-          '</div>'
-        '</div>'
+      var html = '<div class="message" data-id=' message.id +  ''>' +
+        '<div class="upper-message">' +
+          '<div class="upper-message__user-name">' +
+            message.user_name + 
+          '</div>' +
+          '<div class="upper-message__date">' +
+            message.created_at + 
+          '</div>' +
+        '</div>' +
         '<div class="lower-message">'
-          '<img src="message.image.url" class="lower-message__image" >'
-        '</div>'
+          '<img src="' + message.image.url + " class="lower-message__image" >' +
+        '</div>' +
       '</div>'
     };
     return html;
@@ -85,9 +93,9 @@ $(function() {
     })
     .done(function(messages) {
       var insertHTML = '';
-
     })
     .fail(function() {
+      setInterval(reloadMessages, 7000);
       console.log('alert');
     });
   };
