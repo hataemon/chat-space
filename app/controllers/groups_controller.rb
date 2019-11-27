@@ -36,9 +36,7 @@ class GroupsController < ApplicationController
     end
   end
 
-  # def button_to  
 
-  # end
 
   private
   def group_params
