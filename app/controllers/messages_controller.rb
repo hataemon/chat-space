@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     # @group = Group.find(params[:group_id]) #今いるグループの情報をパラムスの値を元にDBから取得。
-    @messages = @group.messages.includes(:user)#グループが所有しているメッセージの中から、params[:last_id]よりも大きいidがないかMessageから検索して、@messagesに代入。
+    @messages = @group.messages.includes(:user) #グループが所有しているメッセージの中から、params[:last_id]よりも大きいidがないかMessageから検索して、@messagesに代入。
   end
     # @message = Message.new
     # @messages = @group.messages.includes(:user)
@@ -16,7 +16,6 @@ class MessagesController < ApplicationController
       respond_to do |format|
       format.html {redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'}
       format.json
-
     end
 
   else
@@ -33,6 +32,7 @@ class MessagesController < ApplicationController
   end
 
   def set_group
+    Time.zone="Tokyo"
     @group = Group.find(params[:group_id])
   end
 end

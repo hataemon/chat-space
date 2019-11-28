@@ -1,18 +1,18 @@
 
 .wrapper {
-  width: 100vw;
-  height: 100vh;
   display:flex;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+
+   }
   
-}
 
 .side-bar{
   height: calc(100vh - 400x);
   background-color: #2f3e51;
   width: 360px;
-  padding:20px 20px ０;
+  padding:０;
   overflow: scroll;
   bottom:610px;
 }
@@ -22,7 +22,7 @@
   height: 100px;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0;
   color:#FFFFFF;
   display:flex;
   width: 100%;
@@ -45,8 +45,8 @@
 }
 
 .header__name{
-color:#fff;
-display:flex;
+ color:#fff;
+ display:flex;
 }
 
 .groups {

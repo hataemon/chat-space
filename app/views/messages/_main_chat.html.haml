@@ -11,7 +11,7 @@
 
     .main-header__right-box
       .main-header__right-box__button
-        = link_to "Edit", edit_group_path(@group.id)
+        = link_to "Edit", edit_group_path(params[:group_id])
 
   .messages
     = render @messages

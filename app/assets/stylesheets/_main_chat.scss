@@ -181,15 +181,22 @@
 
 .form {
   background-color: #DDDDDD;
-  box-sizing: border-box;  
-  height: 90px;
+  width: 100%;
+  height: 140px;
   padding: 20px 50px 20px 40px;
   &__message {
     border: none;
     float: left;
-    height: 50px;
     width: calc(100% - 150px);
-    padding:10px;
+    height: 50px;
+    padding: 0 40px 0 10px;
+    color: #434a54;
+    border-style: none;
+    text-align: center;
+
+
+    // 
+    // padding:10px;
   }
   &__mask {
     background-color: white;
