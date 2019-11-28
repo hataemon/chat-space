@@ -14,7 +14,9 @@ class UsersController < ApplicationController
   def update
     if current_user.update(user_params)
       redirect_to root_path
-    else
+    else   render :edit
+    end 
+  end
 
   def index
      respond_to do |format|
@@ -22,8 +24,8 @@ class UsersController < ApplicationController
           format.html
           format.json
       end
-  end render :edit
-end
+    end
+
 
   private
 
@@ -45,7 +47,6 @@ end
 
 #   def edit
 #   end
-
 #   def update
 #     if current_user.update(user_params)
 #       redirect_to root_path
