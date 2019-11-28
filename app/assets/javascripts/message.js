@@ -89,14 +89,24 @@ $(function() {
       url: app/messages,
       type: 'get',
       dataType: 'json',
-      data: {id: last_message_id}
+      data: {;Last_id: last_message_id}
     })
     .done(function(messages) {
       var insertHTML = '';
+      insertHTML = buildHTML(message);  
+      $('.messages').append(insertHTML);
     })
+    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');/
     .fail(function() {
-      setInterval(reloadMessages, 7000);
-      console.log('alert');
-    });
-  };
+      alert('自動更新に失敗しました');//ダメだったらアラートを出す
+      });
+     }
+  };  
+    setInterval(reloadMessages, 5000);
+  });
 });
+
+
+
+// console.log('alert');
+// $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');/

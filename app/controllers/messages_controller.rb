@@ -3,8 +3,12 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-    @messages = @group.messages.includes(:user)
+    # @group = Group.find(params[:group_id]) #今いるグループの情報をパラムスの値を元にDBから取得。
+    @messages = @group.messages.includes(:user)#グループが所有しているメッセージの中から、params[:last_id]よりも大きいidがないかMessageから検索して、@messagesに代入。
   end
+    # @message = Message.new
+    # @messages = @group.messages.includes(:user)
+
 
   def create
     @message = @group.messages.new(message_params)

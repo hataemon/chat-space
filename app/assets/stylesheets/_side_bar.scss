@@ -3,13 +3,15 @@
   width: 100vw;
   height: 100vh;
   display:flex;
+  margin: 0;
+  padding: 0;
   
 }
 
 .side-bar{
-  height: calc(100vh - 100px);
+  height: calc(100vh - 400x);
   background-color: #2f3e51;
-  width: 300px;
+  width: 360px;
   padding:20px 20px ０;
   overflow: scroll;
   bottom:610px;
@@ -25,6 +27,7 @@
   display:flex;
   width: 100%;
   font-weight: bold;  
+  
 }
 
 .header__lists{
@@ -50,9 +53,9 @@ display:flex;
   background-color: #2f3e51;
   overflow: scroll;
   padding: 20px 20px 0;
-  overflow: scroll;
   color: white;
   padding:46px
+  
   
 }
 
@@ -64,6 +67,7 @@ display:flex;
   background-color: #2f3e51;
   padding: 20px 20px 0;
   overflow: scroll;
+  margin-left: auto;
   }
 
   .group__name {
