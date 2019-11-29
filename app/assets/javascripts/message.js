@@ -59,20 +59,18 @@ $(function () {
             url: "api/messages",
             type: 'GET',
             dataType: 'json', 
-            data: {message:{last_id: last_message_id}
+            data: {message:{id_last: message_id}
           }
-        })
+          })
         .done(function (messages){
           var insertHTML = '';
           messages.forEach(function(message){
             if (message.id > last_message_id )
             insertHTML = buildHTML(message);
             $('.messages').append(insertHTML);
-         
-          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+            $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+          })
         })
-        }) 
-      
         .fail(function (){
           alert('自動更新に失敗しました');
         });
