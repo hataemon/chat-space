@@ -59,9 +59,9 @@ $(function () {
             url: "api/messages",
             type: 'GET',
             dataType: 'json', 
-            data: {message:{id_last: message_id}
+            data: {id: last_message_id}
           }
-          })
+          )
         .done(function (messages){
           var insertHTML = '';
           messages.forEach(function(message){
