@@ -22,7 +22,7 @@ $(function() {
       <p class="chat-group-user__name">${name}</p>
       <div class="user-search-remove chatMember_button" data-user-id="${id}" data-user-name="${name}">削除</div>
     </div>`;
-    $("chat_group").append(html);
+    $("#chat-group-users").append(html);
   }
   function addMember(userId) {
     let html = `<input value="${userId}" name="group[user_ids][]" type="hidden" id="group_user_ids_${userId}" />`;
@@ -40,6 +40,7 @@ $(function() {
    
       .done(function(users) {
         $("#user-search-result").empty();
+        console.log(users);
 
         if (users.length !== 0) {
           users.forEach(function(user) {
