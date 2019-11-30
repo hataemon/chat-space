@@ -6,8 +6,9 @@
 
       .main-header__left-box__member-list
         - @group.group_users.each do |group_user|
+          Member 
           =group_user.user.name
-        
+                 
     .main-header__right-box
       .main-header__right-box__button
         = link_to "Edit", edit_group_path(params[:group_id])

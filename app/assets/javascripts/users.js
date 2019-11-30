@@ -31,24 +31,28 @@ $(function() {
 
   $("#user-search-field").on("keyup", function() {
     let input = $("#user-search-field").val();
+    var userIds = []
+    $('.chat-group-users .chat-group-user').each(function(i,user) {
+      userIds.push($(user).attr('id'))
+    })
     $.ajax({
       type: "GET",
       url: "/users",
-      data: { keyword: input },
+      data: { keyword: input, user_ids: userIds },
       dataType: "json"
     })
    
       .done(function(users) {
-        $("#user-search-result").empty();
-        console.log(users);
-
+        $("#user-search-result").children().remove();
+        
         if (users.length !== 0) {
           users.forEach(function(user) {
             addUser(user);
           });
-        } else if (input.length == 0) {
-          return false;
+        // } else if (input.length == 0) {
+        //   return false;
         } else {
+          console.log('111')
           addNoUser();
         }
       })
@@ -56,6 +60,7 @@ $(function() {
         alert("通信エラーです。ユーザーが表示できません。");
       });
   });
+
   $(document).on("click", ".chat-group-user__btn--add", function() {
     
     const userName = $(this).attr("data-user-name");

@@ -1,32 +1,28 @@
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  text-decoration: none;
  }
 
 .chat-main{
   width: calc(100vw - 300px);
   float: left;
   height: calc(100vh - 190px);
-
   background-color: #fafafa;
-  color: #333333;
   box-sizing: border-box;
   font-size: 20px;
   color: #333;
+  padding-bottom: 40px;
 
 }
 
 
 
 .main-header{
-  background-color:＃FFFFFF;
   font-size: 15px;
   color: #333;
-  margin:35;
   height: 100px;
-  padding: 20px 0 0 10px;
+  padding: 35px 0 0 40px;
   border-bottom: solid 1px #eee;
   
 
@@ -44,32 +40,29 @@
     justify-content: space-between;
     border-bottom: solid 1px #eee;
     overflow: scroll;
-    font:12px;
+    margin-top:15px;
 
   }
 
-  &__right-box{
-    margin-top: 35px;
-  }
 
   &__right-box__button{
     font-size: 12px;
-    color: #999999;
+    text-decoration:none;
+
+    a{
+      color: #38aef0;
+    }
   }
 
   &__right-box {
     height: 40px;
     line-height: 40px;
     padding: 0 20px;
-    margin-top: 30px;
+    margin-top: 28px;
     border: solid 1px #38aef0;
     position: absolute;
     right: 40px;
-    top: 10px;
-  }
-
-  &__right-box__button{
-    color:#38aef0;
+    top: 0px;
   }
 
 }
@@ -86,81 +79,76 @@
   overflow: scroll;
   box-sizing: border-box;
  
+ 
 }
+
 
 .message{
   padding-bottom: 40px;
-  box-shadow: borderbox;
 
-  .upper-message--user-name{
+   
+  .upper-message{
     display: flex;
-    font-ize: 12px;
-    color: #999999;
-  }
-
-  .upper_message--group-name{
-    display: flex;
-    font-size: 20px;
-    color: #333333;
-  }
   
+    &__user-name{
+      font-size: 16px;
+      color: #999999;
+    
+    }
 
 
-  &__upper-info{
-    display: flex;
-    margin-bottom: 10px;
+    
+    &__date{
+      color: #999999;
+      font-size: 12px;
+      margin-left: 10px;
+      
+      
+      // display: block;
+      // margin-block-start: 1em;
+      // margin-block-end: 1em;
+      // margin-inline-start: 0px;
+      // margin-inline-end: 0px;
+
+    }
   }
 
-  &__upper-info__talker{
-    color: #434a54;
-    font-size: 16px;
-    font-weight: bold;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-  }
+  .lower-message{
 
+    &__upper-info{
+      display: flex;
+      margin-bottom: 10px;
+    }   
 
-  &__upper-info__date{
-    color: #999999;
-    font-size: 12px;
-    margin-left: 10px;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    &__content{
+      color: #434a54;
+      font-size: 14px;
+      margin: 0 0 10px;
+      // font-weight: bold;
+      // display: block;
+      // margin-block-start: 1em;
+      // margin-block-end: 1em;
+      // margin-inline-start: 0px;
+      // margin-inline-end: 0px;
+    }
 
-  }
-
-  &__text{
-    color: #434a54;
-    font-size: 14px;
-    margin-bottom: 10px;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-  }
-  
-   &__image {
-    width: 200px;
-    height: auto; 
-    padding:40px 
-  }
-  
-   &__menu{
-    position: absolute;
-    display: flex;
-    display: none;
-    top: -8px;
-    right: 20px;
-    line-height: 1;
-    padding: 3px 7px;
-    margin: 0 0 0 auto;
+      &__image {
+        width: 200px;
+        height: auto; 
+        padding:40px 
+      }
+ 
+      &__menu{
+        position: absolute;
+        display: flex;
+        display: none;
+        top: -8px;
+        right: 20px;
+        line-height: 1;
+        padding: 3px 7px;
+        margin: 0 0 0 auto;
+      } 
+}
 
     li {
       padding: 0.5rem;
@@ -176,7 +164,7 @@
       }
     }
   }
-}
+
 
 
 .form {
@@ -192,11 +180,8 @@
     padding: 20px 40px;
     color: #434a54;
     border-style: none;
-    text-align: center;
 
 
-    // 
-    // padding:10px;
   }
   &__mask {
     background-color: white;
@@ -219,7 +204,6 @@
     float: right;
     font-size: 16px;
     height: 50px;
-    margin-left: 15px;
     padding: 0 30px;
   }
 }
